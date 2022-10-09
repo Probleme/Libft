@@ -6,9 +6,11 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 23:43:36 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/10 00:12:31 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/10 00:14:19 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {
