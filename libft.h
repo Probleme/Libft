@@ -5,5 +5,6 @@
 
 int ft_toupper(int c);
 int ft_tolower(int c);
-int ft_strlen(const char *s);
-int ft_
+size_t ft_strlen(const char *s);
+int ft_isalnum(int c);
+
