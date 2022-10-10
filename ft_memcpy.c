@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:17:29 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/10 02:42:55 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/10 02:43:45 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,4 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 }
 int main()
 {
-    char s[10];
-    char d[10];
-    printf("%s",ft_memcpy(d,s,4));
 }
