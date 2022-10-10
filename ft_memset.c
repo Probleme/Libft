@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:18:27 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/10 18:06:06 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/10 18:07:59 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *ft_memset(void *b, int c, size_t len)
 }
 int main()
 {
-    char *a = "Ayoub";
-    ft_memset(a,98,3);
-    printf("%")
+    char a[] = "Ayoub";
+    ft_memset(a,98,6);
+    printf("%s", a);
 }
