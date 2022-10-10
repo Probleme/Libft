@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:18:27 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/10 00:18:28 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/10 02:35:15 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ void *ft_memset(void *b, int c, size_t len)
         i++;
     }
     return b;
+}
+int main()
+{
+    char *a = "Ayoub";
+    printf("%s",ft_memset(a,97,2));
 }
