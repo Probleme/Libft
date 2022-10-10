@@ -2,6 +2,7 @@
 while true
 do
     echo "----------------------------------------------------------------------"
+    git pull
     git add .
     git commit -m "updating"
     git push
