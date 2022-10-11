@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 00:18:27 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/11 02:19:44 by ataouaf          ###   ########.fr       */
+/*   Created: 2022/10/10 21:39:22 by ataouaf           #+#    #+#             */
+/*   Updated: 2022/10/10 21:40:38 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *b, int c, size_t len)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
-    unsigned char *ptr = b;
-    while (len-- > 0)
-        *ptr++ = c;
-    return b;
+    
 }
