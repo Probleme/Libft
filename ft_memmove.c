@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:22 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/11 04:49:50 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/11 04:52:04 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,11 @@ void *ft_memmove(void *dst, const void *src, size_t len)
         *ld-- = *ls--;
     }
   return dst;
+}
+int main () 
+{
+   char dest[] = "oldstring";
+   const char src[]  = "newstring";
+   ft_memmove(dest, src, 9);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
 }
