@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 06:16:01 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/13 02:37:44 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/13 02:48:01 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,22 @@
   
   while (*src && --dstsize)
    *(dst++) = *(src++);
+   
+  *dst = '\0';
   
    return lsrc;
  }
+ /*
  int main()
  {
   char s[] = "Ayoub";
-  char d[10] = {0};
-  printf("%zu\n",ft_strlcpy(d,s,0));
+  char d[10] ;
+  printf("%zu\n",ft_strlcpy(d,s+1,4));
   printf("%s\n",d);
   
   char s1[] = "Ayoub";
   char d1[10] ;
-  printf("%zu\n",strlcpy(d1,s1, 0));
+  printf("%zu\n",strlcpy(d1,s1+1, 4));
   printf("%s\n",d1);
-  
  }
+ */
