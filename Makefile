@@ -12,18 +12,18 @@ NAME = libft.a
 RM = rm -f
 
 %.o : %.c libft.h
-        ${CC} ${FLAGS} $<       -o $@
+	${CC} ${FLAGS} $<       -o $@
 
 ${NAME} : ${OBJS}
-        ar -rc $@ ${OBJS}
+	ar -rc $@ ${OBJS}
 
 all : ${NAME}
 
 clean :
-        ${RM} ${OBJS}
+	${RM} ${OBJS}
 
 fclean : clean
-        ${RM} ${NAME}
+	${RM} ${NAME}
 
 re : fclean all
 
