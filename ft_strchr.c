@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:19:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/13 22:25:40 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/13 22:28:16 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ char *ft_strchr(const char *s, int c)
             return ;
         else
             return NULL;
-            
     }
-    
+}
+int main()
+{
+    char ayoub[] = "Ayoub";
+    printf("%s",strchr())
 }
