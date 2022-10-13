@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 05:33:49 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/13 09:01:24 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/13 09:01:47 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
     if (ldst > dstsize)
         return lsrc + dstsize;
     else
+        return lsrc + ldst;
     while (*src && --dstsize)
         *dst++ = *src++;
     
