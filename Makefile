@@ -12,7 +12,7 @@ NAME = libft.a
 RM = rm -f
 
 %.o : %.c libft.h
-	${CC} ${FLAGS} $<       -o $@
+	${CC} ${FLAGS} $< -o $@
 
 ${NAME} : ${OBJS}
 	ar -rc $@ ${OBJS}
