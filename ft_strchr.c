@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:19:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/13 23:07:15 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/13 23:09:51 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char *ft_strchr(const char *s, int c)
 {
-    // int i = 0;
-    while (*s++ )
+    int i = 0;
+    char *str = *s;
+    while (*str++ )
     {
-        if(*s++ == c)
-            return *s;
+        if(*str++ == c)
+            return str;
         else
-            return NULL;
+            return 0;
     }
 }
 int main()
