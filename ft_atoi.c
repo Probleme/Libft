@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/13 10:40:07 by ataouaf           #+#    #+#             */
+/*   Updated: 2022/10/13 10:40:18 by ataouaf          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 int ft_atoi(const char *str)
 {
     int i = 0;
@@ -18,12 +32,12 @@ int ft_atoi(const char *str)
     }
     return r*s;
 }
-#include <stdio.h>
-#include <stdlib.h>
-int main()
-{
-	printf("%d\n",ft_atoi(" ---+--+1234ab567"));
-	printf("%d\n",atoi(" ---+--+1234ab567"));
-	printf("%d\n",ft_atoi("1234567"));
-	printf("%d\n",atoi("1234567"));
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main()
+// {
+// 	printf("%d\n",ft_atoi(" ---+--+1234ab567"));
+// 	printf("%d\n",atoi(" ---+--+1234ab567"));
+// 	printf("%d\n",ft_atoi("1234567"));
+// 	printf("%d\n",atoi("1234567"));
+// }
