@@ -6,26 +6,31 @@
 /*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:19:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/13 23:09:51 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/13 23:56:17 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 char *ft_strchr(const char *s, int c)
 {
     int i = 0;
-    char *str = *s;
-    while (*str++ )
+    char cr = (char)c;
+    const char *str = s;
+    const char *rst;
+    while (str[i++])
     {
-        if(*str++ == c)
-            return str;
+        if(str[i] == cr)
+            rst = &str[i++];
         else
-            return 0;
+            return NULL;
     }
+    return 0;
 }
-int main()
-{
-    char ayoub[] = "Ayoub";
-    printf("%s",strchr(ayoub,121));
-}
+// int main()
+// {
+//     char a[] = "Ayoub";
+//     printf("%s\n",strchr(a,121));
+//     char a1[] = "Ayoub";
+//     printf("%s",strchr(a1,121));
+// }
