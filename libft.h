@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/14 11:04:18 by ataouaf           #+#    #+#             */
+/*   Updated: 2022/10/14 11:35:57 by ataouaf          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 #define LIBFT_H
 
@@ -18,5 +30,7 @@ void ft_bzero(void *s, size_t n);
 void *ft_memmove(void *dst, const void *src, size_t len);
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
+char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
 
 #endif
