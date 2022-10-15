@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:08:20 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/14 12:17:18 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/16 00:26:23 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,27 @@
 
 char *ft_strrchr(const char *s, int c)
 {
-    int i = 0;
-    char cr = (char) c;
-    size_t lens = ft_strlen(s);
-    if (c == '\0')
-    {
+   size_t lens = ft_strlen(s);
+   if (c == '\0')
+   {
         s = &s[lens];
         return (char *) s;
-    }
-    
-    while (s[i] && lens--)
-    {
-        if (s[i] == cr)
+   }
+   
+   while (lens--)
+   {
+        if (*s++ == c) 
         {
-            s = &s[i];
+            s -= 1;    
             return (char *) s;
         }
-        i++;
-    }
-    return 0;
+   }
+   return 0;
 }
 // int main()
 // {
 //     char a[] = "Ayoub";
-//     printf("%s\n",ft_strrchr(a,117));
+//     printf("%s\n",ft_strrchr(a,121));
 //     char a1[] = "Ayoub";
-//     printf("%s",strrchr(a1,117));
+//     printf("%s",strrchr(a1,121));
 // }

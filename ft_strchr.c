@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:19:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/14 12:14:47 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/16 00:27:15 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,19 @@
 
 char *ft_strchr(const char *s, int c)
 {
-    int i = 0;
-    char cr = (char)c;
-    size_t lens = ft_strlen(s);
-    if (c == '\0')
+    while (*s)
     {
-        s = &s[lens];
-        return (char *)s;
+        if (*s++ == c) 
+            return (char *)s - 1;
     }
-    
-    while (s[i])
-    {
-        if(s[i] == cr)
-        {
-            s = &s[i];
-            return (char *)s;            
-        }
-        i++;
-    }
-    return 0;
-}/*
-int main()
-{
-    char a[] = "Ayoub";
-    printf("%s\n",ft_strchr(a,0));
-    char a1[] = "Ayoub";
-    printf("%s\n",strchr(a1,0));
-}*/
+    if ((char)c == '\0')
+        return (char *) s;
+    return NULL;
+}
+// int main()
+// {
+//     char a[] = "Ayoub";
+//     printf("%s\n",ft_strchr(a,0));
+//     char a1[] = "Ayoub";
+//     printf("%s\n",strchr(a1,0));
+// }
