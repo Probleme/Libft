@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:19:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/14 12:08:11 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/14 12:14:47 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ char *ft_strchr(const char *s, int c)
 {
     int i = 0;
     char cr = (char)c;
+    size_t lens = ft_strlen(s);
     if (c == '\0')
     {
-        s = &s[ft_strlen(s)];
+        s = &s[lens];
         return (char *)s;
     }
     
