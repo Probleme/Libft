@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataouaf <ataouaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:40:07 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/13 10:40:18 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/16 05:22:37 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int ft_atoi(const char *str)
     int s = 1;
     while((str[i] >= 9 && str[i] <= 13) || str[i] == 32 )
         i++;
-    while (str[i] == '-' || str[i] == '+')
+    if (str[i] == '-' || str[i] == '+')
     {
         if(str[i] == '-')
             s *= -1;
