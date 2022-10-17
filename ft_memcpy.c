@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:17:29 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 09:14:01 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/17 09:16:02 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,19 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
     size_t i = 0;
     if (d == 0 && s == 0)
         return 0;
-    while (i<n)
+    while (i < n)
     {
         d[i] = s[i];
         i++;
-        if ()
     }
-    return d;
+    return dst;
 }
 int main()
 {
     char src[] = "Ayoub";
-    char dst[5] ;
-    printf("%s\n",memcpy(dst,src,3));
-    // char src1[] = "Ayoub";
-    // char ds1t[5];
-    // printf("%s\n",memcpy(dst1,src1,3));
+    char dst[] = "";
+    char src1[] = "Ayoub";
+    char dst1[] = "";
+    printf("%s\n",memcpy(dst,src,5));
+    printf("%s\n",ft_memcpy(dst1,src1,5));
 }
