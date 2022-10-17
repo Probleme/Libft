@@ -6,25 +6,29 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:22 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 09:31:41 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/17 14:01:23 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    char *d = dst;
-    const char *s = src;
-    if(!dst && !src)
-        return NULL;
-    if (d < s)
-        while (len--)
-            *(d++) = *(s++);
-    else 
-        while(len--)
-            *(d + len) = *(s + len);
-  return dst;
+	char		*d;
+	const char	*s;
+
+	d = dst;
+	s = src;
+	if (!dst && !src)
+		return (NULL);
+	while (len--)
+	{
+		if (d < s)
+			*d++ = *s++;
+		else
+			*(d + len) = *(s + len);
+	}
+	return (dst);
 }
 
 // int main () 
@@ -33,7 +37,6 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 //     char t1[255];
 //     int i1 = -1;
 
-    
 //     char s[10] = "Abde llah";
 //     char t[255];
 //     int i = -1;
@@ -41,7 +44,6 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 //     while (s[++i])
 //         t[i + 4] = s[i];
 //     printf("result : %s\n", memmove(t, t + 4, 10));
-        
 //     while (s1[++i1])
 //         t1[i1 + 4] = s1[i1];
 //     printf("result : %s\n", ft_memmove(t1, t1 + 4, 10));

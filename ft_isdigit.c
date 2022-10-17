@@ -6,13 +6,13 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:01:41 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 12:43:18 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/17 12:47:40 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    return (0);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
