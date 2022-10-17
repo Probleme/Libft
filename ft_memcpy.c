@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:17:29 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 09:17:56 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/17 09:20:07 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
     char *d = dst;
     const char *s = src;
     size_t i = 0;
-    if (d == 0 && s == 0)
-        return 0;
-    while (i < n)
+    if (!d && !s)
+        return NULL;
+    while (s[i] && i < n)
     {
         d[i] = s[i];
         i++;
