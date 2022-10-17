@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:07:34 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 14:49:09 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/17 17:32:46 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,31 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	ldst = ft_strlen(dst);
 	if (dstsize == 0)
 		return (lsrc);
-	while (*src && --dstsize)
+	if (ldst > dstsize)
 	{
-		if (ldst > dstsize)
-			return (lsrc + dstsize);
-		else
-		{
-			return (lsrc + ldst);
+		while (*src && --dstsize)
 			*dst++ = *src++;
-		}
+	return (lsrc + dstsize);
+	}
+	if (ldst < dstsize)
+	{
+		while (*src && --dstsize)
+			*dst++ = *src++;
+	return	(lsrc + ldst);
 	}
 	*dst = '\0';
 	return (dstsize);
 }
 
-// int main()
-// {
+int main()
+{
+	char src[] = "Ayoub Taouaf";
+	char dst[11] = "";
+	printf("%zu\n",strlcat(dst, src, 11));
+	printf("%s\n",dst);
 
-// 	char src[20] = "Ayoub Taouaf";
-// 	char dst[20] = "abcdef";
-// 	printf("%zu\n%s",strlcat(dst, src, 0),dst);
-// 	printf("%s\n",dst);
-
-//  char src1[] = "Ayoub Taouaf";
-// 	char dst1[] = "CCCCCCCCCCCCCCCA";
-// 	printf("%zu\n",strlcat(dst1, src1, 6));
-// 	printf("%s\n",dst1);
-// }
+ 	char src1[] = "Ayoub Taouaf";
+	char dst1[11] = "";
+	printf("%zu\n",ft_strlcat(dst1, src1, 11));
+	printf("%s\n",dst1);
+}
