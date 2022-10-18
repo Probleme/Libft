@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:51:39 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 18:44:29 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/18 22:02:21 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i, j;
-	unsigned char *str = haystack;
-	j = 0;
+	size_t	i;
+
 	i = 0;
-	// if (!*needle)
-	// 	return ((char *)haystack);
+	if (!*needle)
+		return ((char *)haystack);
 	while (*str)
 	{
-		if (str[j] == needle[j])
+		if (haystack[j] == needle[j])
 		{
 			i = 1;
-			while (str[i] && needle[i] == needle[i])
+			while (str[i] && haystack[i] == needle[i])
 				i++;
 			if (!needle[i])
 				return ((char *) haystack);
 		}
-		// haystack++;
-		j++;
+		haystack++;
 	}
 	return (0);
 }
