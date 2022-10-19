@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:07:34 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 17:32:46 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/18 22:11:43 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dstsize);
 }
 
-int main()
-{
-	char src[] = "Ayoub Taouaf";
-	char dst[11] = "";
-	printf("%zu\n",strlcat(dst, src, 11));
-	printf("%s\n",dst);
+// int main()
+// {
+// 	char src[] = "Ayoub Taouaf";
+// 	char dst[11] = "";
+// 	printf("%zu\n",strlcat(dst, src, 11));
+// 	printf("%s\n",dst);
 
- 	char src1[] = "Ayoub Taouaf";
-	char dst1[11] = "";
-	printf("%zu\n",ft_strlcat(dst1, src1, 11));
-	printf("%s\n",dst1);
-}
+//  	char src1[] = "Ayoub Taouaf";
+// 	char dst1[11] = "";
+// 	printf("%zu\n",ft_strlcat(dst1, src1, 11));
+// 	printf("%s\n",dst1);
+// }
