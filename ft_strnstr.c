@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:51:39 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/19 04:11:45 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/19 04:39:17 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,31 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
 	if (!*needle)
 		return ((char *)haystack);
-	if (len == 0)
-		return (0);
+	i = 0;
 	while (haystack[i] && i < len)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] )
+		if (haystack[i] == needle[0])
 		{
-			j++;
-			if (haystack[i] && haystack[i] == needle[j])
-				return ((char *) haystack);
+			j = 0;
+			while (haystack[i + j] == needle[j] && i + j < len)
+			{
+				if (needle[j + 1] == '\0')
+					return ((char *) &haystack[i]);
+				j++;
+			}
 		}
 		i++;
 	}
 	return (0);
 }
-int main()
-{
-	char a[] = "lorem ipsum dolor sit amet";
-	char d[] = "sit";
-	printf("%s\n",strnstr(a,d,15));
-	char a1[] = "lorem ipsum dolor sit amet";
-	char d1[] = "sit";
-	printf("%s",ft_strnstr(a1,d1,15));
-}
+// int main()
+// {
+// 	char a[] = "lorem ipsum dolor sit amet";
+// 	char d[] = "lorem";
+// 	printf("%s\n",strnstr(a,d,15));
+// 	char a1[] = "lorem ipsum dolor sit amet";
+// 	char d1[] = "lorem";
+// 	printf("%s",ft_strnstr(a1,d1,15));
+// }
