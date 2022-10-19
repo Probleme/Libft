@@ -6,13 +6,17 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 05:15:42 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/19 05:16:25 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/19 05:20:49 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    
+	
+}
+int main()
+{
+	
 }
