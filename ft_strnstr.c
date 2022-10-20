@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:51:39 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/19 04:39:17 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/20 04:07:13 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (haystack == 0 && len == 0)
+		return (0);
 	if (!*needle)
 		return ((char *)haystack);
 	i = 0;
@@ -38,10 +40,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 }
 // int main()
 // {
-// 	char a[] = "lorem ipsum dolor sit amet";
+// 	// char a[] = "lorem ipsum dolor sit amet";
 // 	char d[] = "lorem";
-// 	printf("%s\n",strnstr(a,d,15));
-// 	char a1[] = "lorem ipsum dolor sit amet";
+// 	printf("%s\n",strnstr(0,d,0));
+// 	// char a1[] = "lorem ipsum dolor sit amet";
 // 	char d1[] = "lorem";
-// 	printf("%s",ft_strnstr(a1,d1,15));
+// 	printf("%s",ft_strnstr(0,d1,0));
 // }

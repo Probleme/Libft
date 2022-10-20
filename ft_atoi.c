@@ -6,17 +6,19 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:40:07 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/20 03:52:15 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/20 04:25:03 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define MAXLONG 9223372036854775807
+
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	r;
-	int	s;
+	int					i;
+	unsigned long long	r;
+	int					s;
 
 	i = 0;
 	r = 0;
@@ -34,12 +36,16 @@ int	ft_atoi(const char *str)
 		r = r * 10 + str[i] - '0';
 		i++;
 	}
+	if (r > MAXLONG && s == 1)
+		return (-1);
+	else if (r > MAXLONG && s == -1)
+		return (0);
 	return (r * s);
 }
 // int main()
 // {
-// 	printf("%d\n",ft_atoi("-2147483649"));
-// 	printf("%d\n",atoi("-2147483649"));
-// 	printf("%d\n",ft_atoi("2147483649"));
-// 	printf("%d\n",atoi("2147483649"));
+// 	printf("%d\n",ft_atoi("-9223372036854775807"));
+// 	printf("%d\n",atoi("-9223372036854775807"));
+// 	printf("%d\n",ft_atoi("9223372036854775807"));
+// 	printf("%d\n",atoi("9223372036854775807"));
 // }
