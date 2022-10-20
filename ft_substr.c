@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:15:26 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/20 05:45:43 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/21 00:41:19 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (0);
 }
-// int main()
-// {
-// }
