@@ -6,13 +6,12 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:40:07 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/20 04:25:03 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/20 05:10:59 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #define MAXLONG 9223372036854775807
-
 
 int	ft_atoi(const char *str)
 {
