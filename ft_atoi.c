@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:40:07 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/19 04:11:24 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/19 22:04:52 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	ft_atoi(const char *str)
 // #include <stdlib.h>
 // int main()
 // {
-// 	printf("%d\n",ft_atoi("-1234ab567"));
-// 	printf("%d\n",atoi("-1234ab567"));
+// 	printf("%d\n",ft_atoi("99999999999999999999"));
+// 	printf("%d\n",atoi("99999999999999999999"));
 // 	printf("%d\n",ft_atoi("1234567"));
 // 	printf("%d\n",atoi("1234567"));
 // }

@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:04:18 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/19 05:20:28 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/19 22:05:03 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int	ft_toupper(int c);
 int	ft_tolower(int c);
