@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:15:26 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/21 14:37:12 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/21 15:53:46 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 //     char src[] = "test substr function";
 
-//     char *dest = ft_substr(src, 5, 7);
+//     char *dest = ft_substr(src, 0, 20);
 //     printf("%s\n", dest);
 // }
