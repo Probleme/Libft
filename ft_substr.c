@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:15:26 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/21 02:03:12 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/21 14:37:12 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,35 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		lenght;
-	char	*str;
+	size_t			i;
+	unsigned int	lens;
+	char			*str;
 
+	if (!s)
+		return (0);
 	i = 0;
-	lenght = len - start;
-	str = malloc(sizeof(char) * (len + 1));
-	while (i < len && (*(s + i)) != '\0')
+	lens = ft_strlen(s);
+	if (lens <= start)
+		return ((char *) malloc(1 * sizeof(char)));
+	if (lens <= start + 1)
+		str = (char *) malloc((lens - start + 1) * sizeof(char));
+	else
+		str = (char *) malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	while (s[start] && i < len)
 	{
-		*str = *(s + i);
-		str++;
+		str[i] = s[start];
+		i++;
+		start++;
 	}
-	*str = '\0';
-	return (str - s);
+	str[i] = '\0';
+	return (str);
 }
-int main()
-{
-    char src[] = "test substr function";
+// int main()
+// {
+//     char src[] = "test substr function";
 
-    int m = 7;
-    int n = 12;
-    char *dest = ft_substr(src, m, n);
-    printf("%s\n", dest);
-}
+//     char *dest = ft_substr(src, 5, 7);
+//     printf("%s\n", dest);
+// }
