@@ -6,13 +6,13 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:23:20 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/21 19:17:07 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:52:03 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	skip(const char *str, const char c)
+int	skip(const char c, const char *str)
 {
 	int	i;
 
@@ -28,7 +28,6 @@ int	skip(const char *str, const char c)
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*str;
 	size_t	start;
 	size_t	end;
 
@@ -36,15 +35,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (0);
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	str = malloc(end + 1 * sizeof(char));
-	while (s1[start] && skip(set, s1))
+	while (s1[start] && skip(s1[start], set))
 		start++;
-	while (s1[end] && skip(set, s1))
+	while (s1[end] && skip(s1[end], set))
 		end--;
-	
-	return ((char *)str);
+	return (ft_substr(s1, start, (end - start + 1)));
 }
-// int main()
-// {
-// 	printf("");
-// }
