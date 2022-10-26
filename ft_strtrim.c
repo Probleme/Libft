@@ -6,13 +6,13 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:23:20 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/21 20:52:03 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:29:30 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	skip(const char c, const char *str)
+static int	skip(const char c, const char *str)
 {
 	int	i;
 
@@ -41,3 +41,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 		end--;
 	return (ft_substr(s1, start, (end - start + 1)));
 }
+// int main()
+// {
+// 	char a[] = "----//ay/o*ub//*******";
+// 	char b[]= "-/*";
+// 	printf("%s",ft_strtrim(a,b));
+// }
