@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/26 16:07:10 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/27 14:19:25 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,9 @@ char	**ft_split(char const *s, char c)
 		if (s[i])
 		{
 			str[j] = malloc(sizeof(char) * word_length(s, c) + 1);
-			// if(j == 3)
-			// 	str[j] =  NULL;
 			if (!str[j])
 			{
-				free_alloc(str,j);
+				free_alloc (str, j);
 				return NULL;
 			}
 			k = 0;
@@ -94,22 +92,29 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-// int main()
-// {
-// 	char a[] = "    lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
-// 	char c = ' ';
-// 	int i =0;
-// 	char **r = ft_split(a,c);
-// 	if(!r)
-// 	{
-// 			printf("freed");
-// 	}
-// 	else
-// 		printf("not freed");
+int main()
+{
+	char a[] = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
+	char c = ' ';
+	int i =0;
+	char **r = ft_split(a,c);
+	while (tabstr[i] != NULL)
+	{
+		ft_print_result(tabstr[i]);
+		write(1, "\n", 1);
+		free(tabstr[i]);
+		i++;
+	}
+	while (tabstr[i] != NULL)
+	{
+		ft_print_result(tabstr[i]);
+		write(1, "\n", 1);
+		free(tabstr[i]);
+		i++;
+	}
 
-// }
-// 	// char *q = "-----dhs-dfg---dfghsd-h-gsdh---";
-// 	// char a = '-';
+	// char *q = "-----dhs-dfg---dfghsd-h-gsdh---";
+	// char a = '-';
 
-// 	// printf("%d\n", word_count(q, a ));
-// }
+	// printf("%d\n", word_count(q, a ));
+}
