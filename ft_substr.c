@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:15:26 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/24 11:51:13 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/26 20:20:59 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned int	lens;
-	char			*str;
+	size_t	i;
+	size_t	lens;
+	char	*str;
 
 	if (!s)
 		return (0);
 	i = 0;
 	lens = ft_strlen(s);
 	if (lens <= start)
-		return ((char *) malloc(1 * sizeof(char)));
-	if (lens <= start + 1)
-		str = (char *) malloc((lens - start + 1) * sizeof(char));
-	else
-		str = (char *) malloc((len + 1) * sizeof(char));
+		len = 0;
+	if (len >= ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	str = (char *) malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);
-	while (s[start] && i < len)
-	{
-		str[i] = s[start];
-		i++;
-		start++;
-	}
+	while (s[start] && len--)
+		str[i++] = s[start++];
 	str[i] = '\0';
 	return (str);
 }
-// int main()
-// {
-//     char src[] = "test substr function";
-
-//     char *dest = ft_substr(src, 30, 20);
-//     printf("%s\n", dest);
-// }

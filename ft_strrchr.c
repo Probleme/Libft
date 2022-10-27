@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:08:20 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/26 14:38:07 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/26 19:42:44 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[lens] && lens >= 0)
 	{
 		if (s[lens] == (unsigned char)c)
-			return ((char *) (s + lens));
+			return ((char *)(s + lens));
+		if (lens == 0)
+			break ;
 		lens--;
 	}
 	return (0);

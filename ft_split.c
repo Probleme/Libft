@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/26 12:28:50 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/26 16:07:10 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ static int	word_length(const char *s, char c)
 static void	free_alloc(char **str, int i)
 {
 	while (i--)
+	{
+		printf("%d",i);
 		free(str[i]);
+	}
 	free(str);
 }
 
@@ -74,6 +77,8 @@ char	**ft_split(char const *s, char c)
 		if (s[i])
 		{
 			str[j] = malloc(sizeof(char) * word_length(s, c) + 1);
+			// if(j == 3)
+			// 	str[j] =  NULL;
 			if (!str[j])
 			{
 				free_alloc(str,j);
@@ -95,14 +100,14 @@ char	**ft_split(char const *s, char c)
 // 	char c = ' ';
 // 	int i =0;
 // 	char **r = ft_split(a,c);
-// 	while(r[i])
+// 	if(!r)
 // 	{
-// 		printf("%s\n",r[i]);
-// 		i++;
-		
+// 			printf("freed");
 // 	}
+// 	else
+// 		printf("not freed");
 
-
+// }
 // 	// char *q = "-----dhs-dfg---dfghsd-h-gsdh---";
 // 	// char a = '-';
 
