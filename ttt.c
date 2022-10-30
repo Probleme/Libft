@@ -1,27 +1,44 @@
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+int absolute_value(int nbr)
 {
-	char	*temp;
-	int		i;
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}
 
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	if ((size_t)start > len)
+int get_len(int nbr)
+{
+	int len = 0;
+	if (nbr <= 0)
+		++len;
+	while (nbr != 0)
 	{
-		if ((temp = malloc(1)) == NULL)
-			return (NULL);
-		temp[0] = '\0';
-		return (temp);
+		++len;
+		nbr = nbr / 10;
 	}
-	if ((temp = ft_calloc((len + 1), sizeof(char))) == NULL)
-		return (NULL);
-	while (start < (unsigned int)len)
+	return (len);
+}
+
+char ft_itoa(int nbr)
+{
+	char *result;
+	int len;
+
+	len = get_len(nbr);
+	result = malloc(sizeof(char) * (len + 1));
+	result[len] = '\0';
+
+	if (nbr < 0)
+		result[0] = '-';
+	else if (nbr == 0)
+		result[0] = '0';
+
+	while (nbr != 0)
 	{
-		temp[i] = s[start];
-		i++;
-		start++;
+		--len;
+		result[len] = absolute_value(nbr % 10) + '0';
+		nbr = nbr / 10;
 	}
-	return (temp);
+	return (result);
 }

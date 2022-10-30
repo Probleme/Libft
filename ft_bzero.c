@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 02:17:19 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/26 19:41:00 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/29 12:29:37 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
+// int main()
+// {
+// 	printf("%s", (int *)ft_bzero("ayoub taouaf",0));
+// }

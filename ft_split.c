@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/27 14:19:25 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/29 17:43:06 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,74 +19,65 @@ static int	word_count(const char *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i])
+	while (s && s[i])
 	{
-		while (s[i] != c && s[i])
-			i++;
-		if (s[i])
+		if (s[i] != c)
 		{
-			while (s[i] && s[i] == c)
-				i++;
 			count++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
+		else
+			i++;
 	}
 	return (count);
 }
 
-static int	word_length(const char *s, char c)
+static int	word_length(const char *s, char c, int i)
 {
 	int count;
 
+	i = 0;
 	count = 0;
-	while (*s && *s != c)
+	while (s[i] && s[i] != c)
 	{
 		count++;
-		s++;
+		i++;
 	}
 	return (count);
 }
 
 static void	free_alloc(char **str, int i)
 {
-	while (i--)
-	{
-		printf("%d",i);
+	while (i-- > 0)
 		free(str[i]);
-	}
 	free(str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		count;
+	int		size;
 	char	**str;
 
-	if (!s)
-		return (0);
 	i = 0;
-	j = 0;
-	str = malloc(sizeof(char *) * (word_count(s, c) + 1));
-	if (!str)
+	j = -1;
+	count = word_count(s, c);
+	if (!((str = (char **)malloc((count + 1) * sizeof(char *)))))
 		return (0);
-	while (s[i])
+	while (count > --j)
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] == c)
 			i++;
-		if (s[i])
+		size = word_length(s, c, i);
+		if (!(str[j] == ft_substr(s, i, size)))
 		{
-			str[j] = malloc(sizeof(char) * word_length(s, c) + 1);
-			if (!str[j])
-			{
-				free_alloc (str, j);
-				return NULL;
-			}
-			k = 0;
-			while (s[i] && s[i] != c)
-				str[j][k++] = s[i++];
-			str[j++][k] = '\0';
+			free_alloc(str, j);
+			return (0);
 		}
+		i += size;
 	}
 	str[j] = 0;
 	return (str);
@@ -94,27 +85,25 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char a[] = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
-	char c = ' ';
-	int i =0;
-	char **r = ft_split(a,c);
-	while (tabstr[i] != NULL)
+	char str[] = "strtok needs to be called several times to split a string";
+	int init_size = strlen(str);
+	char delim[] = " ";
+
+	// char *ptr = strtok(str, delim);
+
+	while(str != NULL)
 	{
-		ft_print_result(tabstr[i]);
-		write(1, "\n", 1);
-		free(tabstr[i]);
-		i++;
-	}
-	while (tabstr[i] != NULL)
-	{
-		ft_print_result(tabstr[i]);
-		write(1, "\n", 1);
-		free(tabstr[i]);
-		i++;
+		printf("'%s'\n", ptr);
+		ptr = strtok(NULL, delim);
 	}
 
-	// char *q = "-----dhs-dfg---dfghsd-h-gsdh---";
-	// char a = '-';
+	/* This loop will show that there are zeroes in the str after tokenizing */
+	for (int i = 0; i < init_size; i++)
+	{
+		printf("%d ", str[i]); /* Convert the character to integer, in this case
+							   the character's ASCII equivalent */
+	}
+	printf("\n");
 
-	// printf("%d\n", word_count(q, a ));
+	return 0;
 }

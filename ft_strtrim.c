@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:23:20 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/26 21:22:46 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/29 15:01:48 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 }
 // int main()
 // {
-// 	char a[] = "   xxx   xxx     ";
+// 	char a[] = "          ";
 // 	char b[]= " ";
-// 	printf("%s\n",ft_strtrim(a,b));
+// 	printf("%s",ft_strtrim(a,b));
 // }
