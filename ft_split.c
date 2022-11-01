@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/29 17:43:06 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/30 21:21:02 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int	word_length(const char *s, char c, int i)
 {
 	int count;
 
-	i = 0;
 	count = 0;
 	while (s[i] && s[i] != c)
 	{
@@ -63,11 +62,11 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 
 	i = 0;
-	j = -1;
+	j = 0;
 	count = word_count(s, c);
 	if (!((str = (char **)malloc((count + 1) * sizeof(char *)))))
 		return (0);
-	while (count > --j)
+	while (count > j)
 	{
 		while (s[i] == c)
 			i++;
@@ -78,32 +77,33 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		}
 		i += size;
+		j--;
 	}
 	str[j] = 0;
 	return (str);
 }
 
-int main()
-{
-	char str[] = "strtok needs to be called several times to split a string";
-	int init_size = strlen(str);
-	char delim[] = " ";
+// int main()
+// {
+// 	char str[] = "strtok needs to be called several times to split a string";
+// 	// int init_size = strlen(str);
+// 	char delim[] = " ";
 
-	// char *ptr = strtok(str, delim);
+// 	// char *ptr = strtok(str, delim);
 
-	while(str != NULL)
-	{
-		printf("'%s'\n", ptr);
-		ptr = strtok(NULL, delim);
-	}
+// 	// while(str != NULL)
+// 	// {
+// 	// 	printf("'%s'\n", ptr);
+// 	// 	ptr = strtok(NULL, delim);
+// 	// }
 
-	/* This loop will show that there are zeroes in the str after tokenizing */
-	for (int i = 0; i < init_size; i++)
-	{
-		printf("%d ", str[i]); /* Convert the character to integer, in this case
-							   the character's ASCII equivalent */
-	}
-	printf("\n");
+// 	/* This loop will show that there are zeroes in the str after tokenizing */
+// 	// for (int i = 0; i < init_size; i++)
+// 	// {
+// 	// 	printf("%d ", str[i]); /* Convert the character to integer, in this case
+// 	// 						   the character's ASCII equivalent */
+// 	// }
+// 	// printf("\n");
 
-	return 0;
-}
+// 	return 0;
+// }

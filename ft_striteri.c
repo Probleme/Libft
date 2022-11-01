@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 05:15:26 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/31 06:02:54 by ataouaf          ###   ########.fr       */
+/*   Created: 2022/10/31 05:13:14 by ataouaf           #+#    #+#             */
+/*   Updated: 2022/10/31 05:45:29 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	size_t	lens;
-	char	*str;
+	int	i;
 
-	if (!s)
-		return (0);
+	if (!s || !f)
+		return ;
 	i = 0;
-	lens = ft_strlen(s);
-	if (lens <= start)
-		len = 0;
-	if (len >= ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	str = (char *) malloc((len + 1) * sizeof(char));
-	if (!str)
-		return (0);
-	while (s[start] && len--)
-		str[i++] = s[start++];
-	str[i] = '\0';
-	return (str);
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
+
+// void	f(unsigned int i, char *str)
+// {
+// 	return (str);
+// }
+// int main()
+// {
+// 	printf("%s",ft_striteri("ayoub", *f));
+// }

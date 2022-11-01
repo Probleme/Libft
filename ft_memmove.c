@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:22 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/28 16:17:58 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/31 05:00:00 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	while (len--)
 	{
-		// if (d > s)
-		// {
-		// 	d[j++] = s[i++];
-		// 	// i++;
-		// }
-		// else
-		// {
-		// 	d[len] = s[len];
-		// 	// len++;
-		// }
 		if (d < s)
 			*d++ = *s++;
 		else
@@ -51,7 +41,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char src[] = "lorem ipsum dolor sit amet";
 // 	char dst[] = "";
 // 	printf("%s\n", memmove(dst, src, 8));
-
 
 // 	// char d[] = "";
 // 	// char s[] = "";

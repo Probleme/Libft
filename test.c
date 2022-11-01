@@ -6,78 +6,105 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 15:06:42 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/29 15:06:43 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/10/31 05:52:44 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/libft.h"
+#include "libft.h"
 
-static int ft_count_word(char const *s, char c)
+char	*ft_strndup(const char *s, size_t n)
 {
-	int i;
-	int word;
+	size_t	i;
+	char	*str;
 
 	i = 0;
-	word = 0;
-	while (s && s[i])
+	str = NULL;
+	if (n == 0)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (n + 1));
+	if (str == 0)
+		return (NULL);
+	while (i < n)
 	{
-		if (s[i] != c)
-		{
-			word++;
-			while (s[i] != c && s[i])
-				i++;
-		}
-		else
-			i++;
-	}
-	return (word);
-}
-
-static int ft_size_word(char const *s, char c, int i)
-{
-	int size;
-
-	size = 0;
-	while (s[i] != c && s[i])
-	{
-		size++;
+		str[i] = s[i];
 		i++;
 	}
-	return (size);
+	str[i] = '\0';
+	return (str);
 }
 
-static void ft_free(char **strs, int j)
+char	**ft_freeall(char **list)
 {
-	while (j-- > 0)
-		free(strs[j]);
-	free(strs);
+	size_t	j;
+
+	j = 0;
+	while (list[j])
+	{
+		free(list[j]);
+		j++;
+	}
+	free(list);
+	return (NULL);
 }
 
-char **ft_split(char const *s, char c)
+size_t	ft_wordcount(char const *s, char c)
 {
-	int i;
-	int word;
-	char **strs;
-	int size;
-	int j;
+	size_t	listsize;
+	size_t	i;
 
 	i = 0;
-	j = -1;
-	word = ft_count_word(s, c);
-	if (!(strs = (char **)malloc((word + 1) * sizeof(char *))))
-		return (NULL);
-	while (++j < word)
+	listsize = 0;
+	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		size = ft_size_word(s, c, i);
-		if (!(strs[j] = ft_substr(s, i, size)))
-		{
-			ft_free(strs, j);
-			return (NULL);
-		}
-		i += size;
+		if ((i == 0 && s[i] != c) || \
+		(s[i] == c && s[i + 1] != '\0' && s[i + 1] != c))
+			listsize++;
+		i++;
 	}
-	strs[j] = 0;
-	return (strs);
+	return (listsize);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**strlist;
+	size_t	i;
+	size_t	k;
+	size_t	save;
+
+	i = 0;
+	k = 0;
+	strlist = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	if (!strlist)
+		return (NULL);
+	while (i < ft_wordcount(s, c) && s[k] != '\0')
+	{
+		while (s[k] == c)
+			k++;
+		save = k;
+		while (s[k] != c && s[k] != '\0')
+			k++;
+		strlist[i] = ft_strndup(&s[save], k - save);
+		if (strlist[i++] == 0)
+			return (ft_freeall(strlist));
+	}
+	strlist[i] = NULL;
+	return (strlist);
+}
+
+/*
+**int				main(void)
+**{
+**	char	**tab;
+**	unsigned int	i;
+**
+**	i = 0;
+**	tab = ft_split(", hello, sp    lit ,,,,  th,,,is,plz, , ", ", ");
+**	if (!tab[0])
+**		ft_putendl_fd("ok\n", 1);
+**	while (tab[i] != NULL)
+**	{
+**		ft_putendl_fd(tab[i], 1);
+**		i++;
+**	}
+**}
+*/
