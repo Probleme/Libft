@@ -6,12 +6,11 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:40:07 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/22 23:27:20 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 20:13:02 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define MAXLONG 9223372036854775807
 
 int	ft_atoi(const char *str)
 {
@@ -35,10 +34,6 @@ int	ft_atoi(const char *str)
 		r = r * 10 + str[i] - '0';
 		i++;
 	}
-	if (r > MAXLONG && s == 1)
-		return (-1);
-	else if (r > MAXLONG && s == -1)
-		return (0);
 	return (r * s);
 }
 // int main()

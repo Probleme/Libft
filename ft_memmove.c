@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 21:39:22 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/31 05:00:00 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:41:16 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*d;
-	const char	*s;
-	int			i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
-	d = dst;
-	s = src;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	i = 0;
 	if (!dst && !src)
 		return (NULL);
 	if (d == src)
 		return (dst);
-	while (len--)
+	if (d < s)
+		ft_memcpy(d, s, len);
+	else
 	{
-		if (d < s)
-			*d++ = *s++;
-		else
-			*(d + len) = *(s + len);
+		while (i < len)
+		{
+			d[len - 1 - i] = s[len - 1 - i];
+			i++;
+		}
 	}
 	return (dst);
 }

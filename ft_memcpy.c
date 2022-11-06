@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:17:29 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/28 16:11:49 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:38:50 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
-	size_t		i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
 	i = 0;
-	s = src;
-	d = dst;
+	s = (unsigned char *)src;
+	d = (unsigned char *)dst;
 	if (!d && !s)
 		return (NULL);
 	if (d == s)

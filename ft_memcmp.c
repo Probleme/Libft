@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:01:32 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/17 12:35:14 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 18:46:03 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		if (str1[i] == str2[i] && i == n - 1)
-			return (0);
-		if (!(str1[i] == str2[i]))
+		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
 		i++;
 	}

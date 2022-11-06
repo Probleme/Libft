@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:51:39 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/27 23:54:54 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 20:00:57 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 // int main()
 // {
