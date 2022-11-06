@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:07:34 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/31 06:25:24 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 18:30:56 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t dst_len;
-	size_t src_len;
-	size_t i;
+	size_t	ldst;
+	size_t	lsrc;
+	size_t	i;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
+	if (!dst && !dstsize)
+		return (0);
+	ldst = ft_strlen(dst);
+	lsrc = ft_strlen(src);
 	i = 0;
-	if (dstsize < dst_len + 1)
-		return (dstsize + src_len);
-	if (dstsize > dst_len + 1)
+	if (dstsize < ldst + 1)
+		return (dstsize + lsrc);
+	while (src[i] && ldst + 1 + i < dstsize)
 	{
-		while (src[i] != '\0' && dst_len + 1 + i < dstsize)
-		{
-			dst[dst_len + i] = src[i];
-			i++;
-		}
+		dst[ldst + i] = src[i];
+		i++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
-	// size_t	lsrc;
-	// size_t	ldst;
-	// size_t	i;
-	// size_t	r;
-
-	// if (!dst && dstsize == 0)
-	// 	return (0);
-	// i = 0;
-	// lsrc = ft_strlen(src);
-	// ldst = ft_strlen(dst);
-	// if (ldst > dstsize)
-	// 	r = lsrc + dstsize;
-	// else
-	// 	r = lsrc + ldst;
-	// while (src[i] && ldst < dstsize - 1 && dstsize)
-	// {
-	// 	dst[ldst] = src[i];
-	// 	ldst++;
-	// 	i++;
-	// }
-	// dst[ldst] = '\0';
-	// return (r);
+	dst[ldst + i] = '\0';
+	return (ldst + lsrc);
 }
 
 // int main()

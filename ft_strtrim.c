@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:23:20 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/31 06:21:19 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 18:16:54 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	end;
 	char	*str;
 
-	if (!s1 && !set)
+	if (!s1)
 		return (0);
 	start = 0;
 	end = ft_strlen(s1);

@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:15:26 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/31 06:02:54 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 18:39:25 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
+// int main()
+// {
+// 	char* str;
+
+// 	str = ft_substr("Ayoub Taouaf", 1, 5);
+// 	printf("%s\n", str);
+// 	return 0;
+// }
