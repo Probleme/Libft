@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:19:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/26 19:43:13 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 20:18:54 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if ((char)c == '\0')
 		return ((char *) s + i);
-	return (0);
+	return (NULL);
 }
 
 // int main()
