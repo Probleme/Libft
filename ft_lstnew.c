@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 02:11:11 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 22:01:03 by ataouaf          ###   ########.fr       */
+/*   Created: 2022/11/06 23:34:39 by ataouaf           #+#    #+#             */
+/*   Updated: 2022/11/06 23:38:17 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+typedef struct s_list
 {
-	int		i;
-	char	*ptr;
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
-	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*nlist;
+
+	nlist = (t_list *)malloc(sizeof(t_list));
+	if (!nlist)
 		return (NULL);
-	while (s1[i])
-	{
-		ptr[i] = s1[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	nlist->content = content;
+	nlist->next = NULL;
+	return (nlist);
 }
-// int main()
-// {
-// 	char *p = "ayoub";
-// 	char *s = strdup(p);
-// 	printf("%s\n",s);
-// 	char *p1 = "ayoub";
-// 	char *s1 = strdup(p1);
-// 	printf("%s",s1);
-// }

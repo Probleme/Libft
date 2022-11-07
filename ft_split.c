@@ -6,80 +6,92 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/30 21:21:02 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/06 23:25:50 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(const char *s, char c)
+static size_t	word_count(const char *s, char c)
 {
-	int	i;
-	int	count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
-	while (s && s[i])
+	if (s == 0)
+		return (0);
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			count++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
-		else
+		count++;
+		while (s[i] && s[i] != c)
+			i++;
+		while (s[i] && s[i] == c)
 			i++;
 	}
 	return (count);
 }
 
-static int	word_length(const char *s, char c, int i)
+static char	*ft_strndup(const char *s, size_t n)
 {
-	int count;
+	size_t	i;
+	char	*str;
 
-	count = 0;
-	while (s[i] && s[i] != c)
+	i = 0;
+	if (n == 0)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (n + 1));
+	if (!str)
+		return (NULL);
+	while (i < n)
 	{
-		count++;
+		str[i] = s[i];
 		i++;
 	}
-	return (count);
+	str[i] = '\0';
+	return (str);
 }
 
-static void	free_alloc(char **str, int i)
+static char	**free_alloc(char **str)
 {
-	while (i-- > 0)
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
 		free(str[i]);
+		i++;
+	}
 	free(str);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		count;
-	int		size;
 	char	**str;
+	size_t	i;
+	size_t	j;
+	size_t	save;
 
 	i = 0;
 	j = 0;
-	count = word_count(s, c);
-	if (!((str = (char **)malloc((count + 1) * sizeof(char *)))))
-		return (0);
-	while (count > j)
+	str = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!str)
+		return (NULL);
+	while (i < word_count(s, c) && s[j])
 	{
-		while (s[i] == c)
-			i++;
-		size = word_length(s, c, i);
-		if (!(str[j] == ft_substr(s, i, size)))
-		{
-			free_alloc(str, j);
-			return (0);
-		}
-		i += size;
-		j--;
+		while (s[j] == c)
+			j++;
+		save = j;
+		while (s[j] != c && s[j])
+			j++;
+		str[i] = ft_strndup(&s[save], j - save);
+		if (str[i++] == 0)
+			return (free_alloc(str));
 	}
-	str[j] = 0;
+	str[i] = NULL;
 	return (str);
 }
 

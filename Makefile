@@ -6,7 +6,7 @@
 #    By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 05:35:22 by ataouaf           #+#    #+#              #
-#    Updated: 2022/10/31 05:47:33 by ataouaf          ###   ########.fr        #
+#    Updated: 2022/11/07 00:24:50 by ataouaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,15 @@ ft_memset.c ft_strlcpy.c ft_strlen.c ft_tolower.c ft_toupper.c ft_strchr.c ft_st
 ft_atoi.c ft_calloc.c ft_strdup.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_substr.c ft_strjoin.c\
 ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c
 
+SRCS_BONUS = ft_lstnew.c
+
 CC = cc
 
 FLAGS = -Wall -Wextra -Werror -c
 
 OBJS = ${SRCS:.c=.o}
+
+OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 NAME = libft.a
 
@@ -31,14 +35,17 @@ RM = rm -f
 ${NAME} : ${OBJS}
 	ar -rc $@ ${OBJS}
 
+bonus : ${OBJS_BONUS}
+	ar -rc $@ ${OBJS_BONUS}
+
 all : ${NAME}
 
 clean :
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJS}
 
 fclean : clean
-	${RM} ${NAME}
+	${RM} ${NAME} 
 
 re : fclean all
 
-.PHONY : clean all fclean re
+.PHONY : bonus clean all fclean re
