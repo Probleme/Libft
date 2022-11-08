@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 05:15:42 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/31 04:59:32 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 00:48:44 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(res, (count * size));
 	return (res);
 }
-// int main()
-// {
-
-// 	// char t[] = "jkbajuyshg";
-// 	// printf("%p-->s\n",calloc(SIZE_MAX-10000000 ,SIZE_MAX-100000));
-// 	// char t1[] = "jkbajuyshg";
-// 	char *c = ft_calloc(SIZE_MAX - 1 ,0);
-// 	printf("p-->%p\n",c);
-// 	// char t[] = "jkbajuyshg";
-// 	// char *c1 = calloc(SIZE_MAX - 1 ,0);
-// 	// printf("p-->%p",c1);
-// 	// int i = 0;
-// 	// while (i++ < SIZE_MAX)
-// 	// 	*(c++)= 'a';
-// }

@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:07:34 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 20:17:12 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 01:09:24 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[ldst + i] = '\0';
 	return (ldst + lsrc);
 }
-
-// int main()
-// {
-// 	char src[] = "lorem ipsum dolor sit amet";
-// 	char dst[10] = "";
-// 	ft_memset(dst,'r',15);
-// 	printf("%zu\n",strlcat(dst, src, 5));
-// 	printf("%s\n",src);
-//  	// char src1[] = "Ayoub Taouaf";
-// 	// // char dst1[11] = "";
-// 	// printf("%zu\n",ft_strlcat(0, src1, 0));
-// 	// printf("%s\n",src1);
-// }

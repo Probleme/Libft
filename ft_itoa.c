@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:24:25 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/10/30 17:13:39 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:29:26 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	len = ft_nbrlen(n);
 	res = malloc((len + 1) * (sizeof(char)));
 	if (!res)
-		return (0);
+		return (NULL);
 	res[len] = '\0';
 	if (n < 0)
 		res[0] = '-';
@@ -61,9 +61,3 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
-// int main()
-// {
-// 	printf("%s\n", ft_itoa(-2147483648));
-// 	printf("%s\n", ft_itoa(2147483647));
-// 	printf("%s\n", ft_itoa(-1));
-// }

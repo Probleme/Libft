@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 02:11:11 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 22:01:03 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 01:08:39 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,17 @@
 char	*ft_strdup(const char *s1)
 {
 	int		i;
-	char	*ptr;
+	char	*str;
 
 	i = 0;
-	ptr = malloc(ft_strlen(s1) + 1);
-	if (!ptr)
+	str = malloc(ft_strlen(s1) + 1);
+	if (!str)
 		return (NULL);
 	while (s1[i])
 	{
-		ptr[i] = s1[i];
+		str[i] = s1[i];
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	str[i] = '\0';
+	return (str);
 }
-// int main()
-// {
-// 	char *p = "ayoub";
-// 	char *s = strdup(p);
-// 	printf("%s\n",s);
-// 	char *p1 = "ayoub";
-// 	char *s1 = strdup(p1);
-// 	printf("%s",s1);
-// }

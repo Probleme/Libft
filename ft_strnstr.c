@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:51:39 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 20:00:57 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 01:11:19 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	char a[] = "lorem ipsum dolor sit amet";
-// 	char d[] = "ipsum";
-// 	printf("%s\n",strnstr(a,d,11));
-// 	char a1[] = "lorem ipsum dolor sit amet";
-// 	char d1[] = "ipsum";
-// 	printf("%s",ft_strnstr(a1,d1,11));
-// }

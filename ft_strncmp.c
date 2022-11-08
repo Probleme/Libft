@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 05:19:04 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 21:02:03 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 01:10:40 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-// int main()
-// {
-//     char a[] = "ayoub";
-//     char b[] = "byoub";
-//     printf("%d\n",ft_strncmp(a,b,0));
-//     printf("%d\n",strncmp(a,b,0));
-// }

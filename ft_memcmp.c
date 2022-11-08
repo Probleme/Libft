@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:01:32 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 18:46:03 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:52:43 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-// int main()
-// {
-// 	char a[] = "t\200";
-// 	char b[] = "t\0";
-// 	printf("%d\n",ft_memcmp(a,b,2));
-// 	char a1[] = "t\200";
-// 	char b1[] = "t\0";
-// 	printf("%d",memcmp(a1,b1,2));
-// }
