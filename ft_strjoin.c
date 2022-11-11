@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 14:38:46 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 20:43:52 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:02:35 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		i;
 
 	i = 0;
-	if (!s1)
+	if (!s1 || !s2)
 		return (NULL);
 	lens = ft_strlen(s1);
 	str = (char *) malloc(sizeof(char) * (lens + ft_strlen(s2) + 1));
@@ -39,11 +39,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	str[lens] = '\0';
 	return (str);
 }
-// int main()
-// {
-//     char s1[] = "test strjoin function ";
-//     char s2[] = "";
-
-//     char *dest = ft_strjoin(s1, s2);
-//     printf("%s\n", dest);
-// }

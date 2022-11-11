@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/06 23:25:50 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:05:14 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	str = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
 	if (!str)
 		return (NULL);
@@ -97,9 +99,17 @@ char	**ft_split(char const *s, char c)
 
 // int main()
 // {
-// 	char str[] = "strtok needs to be called several times to split a string";
+// 	for (int i = 0; i <= 3; i++)
+// 		printf("%s\n",ft_split("----Ayoub---Taouaf---test---",'-')[i]);
+// }
+// int main()
+// {
+// 	// char str[] = "strtok needs to be called several times to split a string";
 // 	// int init_size = strlen(str);
-// 	char delim[] = " ";
+// 	// char delim[] = " ";
+
+// 	// char **xstr = ft_split(str,'n');
+// 	// printf("%c",xstr[0][1]);
 
 // 	// char *ptr = strtok(str, delim);
 
@@ -110,12 +120,12 @@ char	**ft_split(char const *s, char c)
 // 	// }
 
 // 	/* This loop will show that there are zeroes in the str after tokenizing */
-// 	// for (int i = 0; i < init_size; i++)
-// 	// {
+// 	// /for (int i = 0; i < init_size; i++)
+// 	//  {
 // 	// 	printf("%d ", str[i]); /* Convert the character to integer, in this case
-// 	// 						   the character's ASCII equivalent */
-// 	// }
-// 	// printf("\n");
+// 	//  						   the character's ASCII equivalent */
+// 	//  }
+// 	//  printf("\n");
 
-// 	return 0;
+// 	// return 0;
 // }

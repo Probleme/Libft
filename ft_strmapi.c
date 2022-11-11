@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 00:20:38 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/08 18:30:36 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/09 11:19:14 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
+// char f(unsigned int i, char c)
+// {
+// 	(void)i;
+// 	if (c >= 'a' && c <= 'z')
+// 		c -= 32;
+// 	return c;
+// }
 
-char f(unsigned int i, char c)
-{
-	(void)i;
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return c;
-}
-
-int main()
-{
-	printf("%s", ft_strmapi("abMcAdA HEL",f));
-}
+// int main()
+// {
+// 	printf("%s", ft_strmapi("abMcAdA HEL",f));
+// }
 
 // char f(unsigned int i, char c)
 // {

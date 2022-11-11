@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:18:27 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/08 17:21:49 by ataouaf          ###   ########.fr       */
+/*   Updated: 2022/11/09 11:13:58 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-int main()
-{
-	int i = 0;
-	ft_memset(&i,233,1);
-	ft_memset((char *)&i + 1, 7,1);
-	printf("%d",i);
-}
-
-
-// 00000000 00000000 00000101 00111001
+// int main()
+// {
+// 	// 1337
+// 	int i = 0;
+// 	ft_memset(&i,57,1);
+// 	ft_memset((char *)&i + 1, 5,1);
+// 	printf("%d",i);
+// }
