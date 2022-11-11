@@ -1,0 +1,41 @@
+matalan 3endna bezzaf dial les srcs files baghin ncompilewhum ila jiit ncompiler kola file bou7dou ayakhud lia bezzaf dial lwaqt 
+hadshi lash kankhdem b makefile 
+
+what is makefile ?
+
+makefile hia wahed tool li katssahel 3lina w kat organizer lina lcode bash ncompilewh . 
+makefile howa wahed ensemble de commandes with variable name and targets bash nssaybou object file w nmess7uh.
+f makefile lwahed yemken lina nssaybou bezzaf targets bash ncompilew w nmess7ou les objects files w binary files.
+w ymken lina ncompilew lprojet dialna sh7ale men merra bghina.
+
+command make ?
+
+kansta3mlou l command make bash ncompilew l program dialna throught makefile.
+menni katkoun 3endna ghir target wehda , blama nmentionnew smia dial target hitashe le 1ere target kaytcoompila automatiquement.
+
+.a file ?
+
+is a static library
+static library hia mejmou3a dial les objects files.
+
+ar ?  -rc
+
+hia wahed l command kat creer w kat modifier w kat extracter les archives files
+archive houwa wahed lfichier kay7tawi 3la bezzaf dia les fichiers li issme7 lina b tatabou3 l millafat l assliya li kaytsemaw (membre de l'archive)
+
+r : kat inserer lia les fichiers f l'archive with remplacement
+c : kat supprimer lia l message menni kayt creya wahed l archive file
+
+variables ?
+
+variable kan representew biih wahed string 
+
+symbols ?
+
+$@ : kat representer file name dial target
+$< : kat representer file name dial 1ere prerequisite
+-c : flag kat generer les .o files
+-o : kat specifier lia l output file li ghan creer
+
+.Phony ?
+
