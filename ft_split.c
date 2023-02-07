@@ -6,7 +6,7 @@
 /*   By: ataouaf <ataouaf@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:53:54 by ataouaf           #+#    #+#             */
-/*   Updated: 2022/11/11 18:05:14 by ataouaf          ###   ########.fr       */
+/*   Updated: 2023/02/07 21:06:09 by ataouaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,36 +96,19 @@ char	**ft_split(char const *s, char c)
 	str[i] = NULL;
 	return (str);
 }
+int	main(void)
+{
+	char	**tab;
+	unsigned int	i;
 
-// int main()
-// {
-// 	for (int i = 0; i <= 3; i++)
-// 		printf("%s\n",ft_split("----Ayoub---Taouaf---test---",'-')[i]);
-// }
-// int main()
-// {
-// 	// char str[] = "strtok needs to be called several times to split a string";
-// 	// int init_size = strlen(str);
-// 	// char delim[] = " ";
-
-// 	// char **xstr = ft_split(str,'n');
-// 	// printf("%c",xstr[0][1]);
-
-// 	// char *ptr = strtok(str, delim);
-
-// 	// while(str != NULL)
-// 	// {
-// 	// 	printf("'%s'\n", ptr);
-// 	// 	ptr = strtok(NULL, delim);
-// 	// }
-
-// 	/* This loop will show that there are zeroes in the str after tokenizing */
-// 	// /for (int i = 0; i < init_size; i++)
-// 	//  {
-// 	// 	printf("%d ", str[i]); /* Convert the character to integer, in this case
-// 	//  						   the character's ASCII equivalent */
-// 	//  }
-// 	//  printf("\n");
-
-// 	// return 0;
-// }
+	i = 0;
+	tab = ft_split("      split       this for   me  !", ' ');
+	if (!tab[0])
+		ft_putendl_fd("ok\n", 1);
+	while (tab[i] != NULL)
+	{
+		ft_putendl_fd(tab[i], 1);
+		i++;
+	}
+	while (1);
+}
